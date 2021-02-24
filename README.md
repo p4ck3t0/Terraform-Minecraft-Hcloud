@@ -40,7 +40,7 @@ After that, the following line in main.tf must be commented out.
 
 ## The Minecraft Server
 
-The Minecraft server is a docker container from itzg, all credits for the docker container itself belong to him!. In itzg [Repo](https://github.com/itzg/docker-minecraft-server) you can also find more configuration options for your container. Most
+The Minecraft server is a docker container from itzg, all credits for the docker container itself belong to him! In itzg [Repo](https://github.com/itzg/docker-minecraft-server) you can also find more configuration options for your container. Most
 of the configuration can be done with environment variables. It is best to simply extend the `provision/ansible-variables.yml` file and add your variables as a `KEY=VALUE` pair.
 Whitelisting is already present but commented out, as well as OP. Comment it in and your player name to make use of this feature.
 
