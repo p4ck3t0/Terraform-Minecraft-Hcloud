@@ -1,0 +1,51 @@
+- become: yes
+  hosts: all
+  name: minecraft-server-install
+  vars_files: ansible-variables.yml
+  tasks:
+    - name: Update all packages
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install docker and some dependencies
+      apt:
+        name: python3-pip, docker.io
+        state: present
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Install docker python module
+      pip:
+        name: docker
+    
+    - name: Create directory minecraft-data
+      file: 
+        path: /root/minecraft-data
+        state: directory
+
+    - name: Check whether a backup is to be imported
+      local_action: stat path=./backup/{{ backup_name }}
+      register: backup
+
+    - name: Upload backup and extract if specified
+      unarchive:
+        src: ./backup/{{ backup_name }}
+        dest: /root/minecraft-data/
+      when: backup.stat.exists
+
+    - name: Run Minecraft docker server
+      docker_container:
+        name: minecraft
+        image: itzg/minecraft-server
+        state: started
+        recreate: yes
+        env: 
+          "{{ docker_env }}"
+        published_ports:
+          - "{{ docker_port }}"
+        volumes:
+          - /root/minecraft-data/:/data/

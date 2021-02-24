@@ -1,0 +1,11 @@
+---
+
+ansible_ssh_private_key_file: ~/.ssh/id_minecraft-server
+backup_name: deploy.tar.gz
+docker_env:
+  TZ=Europe/Berlin
+  EULA=TRUE
+  OVERRIDE_WHITELIST=true
+  WHITELIST=playername
+  OPS=playername
+docker_port: 25565:25565

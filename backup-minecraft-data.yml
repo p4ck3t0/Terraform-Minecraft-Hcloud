@@ -1,0 +1,21 @@
+- become: yes
+  hosts: all
+  name: backup-minecraft-data
+  vars_files: ansible-variables.yml
+  tasks:
+    - name: Stop Docker Container
+      docker_container:
+        name: minecraft
+        state: stopped
+
+    - name: Archive folder minecraft-data for backup
+      archive:
+        path: /root/minecraft-data/
+        dest: /root/{{ backup_name }}
+        format: gz
+
+    - name: Backup compressed folder minecraft-data to ./backup
+      fetch:
+        flat: yes
+        src: /root/{{ backup_name }}
+        dest: ./backup/
