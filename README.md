@@ -3,7 +3,6 @@
 This repository will help to setup an Minecraft Server at the Hetzner Cloud using [Terraform](https://www.terraform.io/), [Ansible](https://www.ansible.com/) and [itzg docker container](https://github.com/itzg/docker-minecraft-server)
 and a backup will be created automatically when you stop playing. If you start the Server again, the backup is restored.
 
-
 ## Requirements
 
 ### Packages
@@ -115,4 +114,4 @@ This Repository is Mirrored from my private Gitlab.
 
 Link to this project on [Github](https://github.com/p4ck3t0/terraform-minecraft-hcloud)
 
-Link to this project on my private [Gitlab](https://gitlab.p4ck3t0.de/public-group/server/terrform-minecraft-hcloud)
+Link to this project on my private [Gitlab](https://gitlab.p4ck3t0.de/public-group/server/terraform-minecraft-hcloud)
