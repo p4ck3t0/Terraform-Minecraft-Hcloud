@@ -112,5 +112,7 @@ Please use the [issue tracker](https://github.com/p4ck3t0/terraform-minecraft-hc
 ### Gitlab <=> Github
 
 This Repository is Mirrored from my private Gitlab.
+
 Link to this project on [Github](https://github.com/p4ck3t0/terraform-minecraft-hcloud)
+
 Link to this project on my private [Gitlab](https://gitlab.p4ck3t0.de/public-group/server/terrform-minecraft-hcloud)
