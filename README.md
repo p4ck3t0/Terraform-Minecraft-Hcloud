@@ -28,8 +28,8 @@ you want to use a password protected ssh key, you can use the `ssh-agent`.
 Use the following commands to add your ssh-key to the ssh-agent.
 
 ```bash
-eval $(ssh-agent)
-ssh-add /path/to/your/password/protected/key
+$ eval $(ssh-agent)
+$ ssh-add /path/to/your/password/protected/key
 ```
 
 After that, the following line in main.tf must be commented out.
@@ -52,9 +52,11 @@ It will took up to 5 Minutes! At the end you will be given an ip address which i
 started yet.
 
 ```bash
-terraform init
-terraform apply
+$ terraform init
+$ terraform apply
 ```
+
+If you did not specify your token as environment variable or in a `.tfvars` file, then terraform will ask you for this token.
 
 ### Delete the Server
 
@@ -62,7 +64,7 @@ Your server backup ist stored in backup with the name of the variable `backup_na
 where you left off playing
 
 ```bash
-terraform destroy
+$ terraform destroy
 ```
 
 ## Variables
