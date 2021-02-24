@@ -85,7 +85,7 @@ All Terraform variables can be specified as environment variables or in a .tfvar
 
 ```toml
 # terraform.tfvars
-hcloud_token = "<yourgeneratedtoken>"
+token = "<yourgeneratedtoken>"
 server_type = "cx41"
 location = "hel1"
 ```
