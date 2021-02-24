@@ -109,3 +109,8 @@ Ansible variables can be specified in `provision/ansible-variables.yml/`. You ca
 
 Please use the [issue tracker](https://github.com/p4ck3t0/terraform-minecraft-hcloud/issues) to report any bugs or request a new feature.
 
+### Gitlab <=> Github
+
+This Repository is Mirrored from my private Gitlab.
+Link to this project on [Github](https://github.com/p4ck3t0/terraform-minecraft-hcloud)
+Link to this project on my private [Gitlab](https://gitlab.p4ck3t0.de/public-group/server/terrform-minecraft-hcloud)
