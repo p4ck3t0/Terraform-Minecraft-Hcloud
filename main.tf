@@ -27,10 +27,11 @@ resource "hcloud_server" "minecraft-server" {
     inline = ["echo 'Waiting for server to be initialized...'"]
 
     connection {
-      host        = self.ipv4_address
-      type        = "ssh"
-      user        = "root"
-      agent       = var.agent
+      host  = self.ipv4_address
+      type  = "ssh"
+      user  = "root"
+      agent = var.agent
+      # If agent = true comment out the folowing line
       private_key = file(var.ssh_private_key)
     }
   }

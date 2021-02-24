@@ -28,18 +28,18 @@
         state: directory
 
     - name: Check whether a backup is to be imported
-      local_action: stat path=./backup/{{ backup_name }}
+      local_action: stat path=../backup/{{ backup_name }}
       register: backup
 
     - name: Upload backup and extract if specified
       unarchive:
-        src: ./backup/{{ backup_name }}
+        src: ../backup/{{ backup_name }}
         dest: /root/minecraft-data/
       when: backup.stat.exists
 
     - name: Run Minecraft docker server
       docker_container:
-        name: minecraft
+        name: "{{ docker_name }}"
         image: itzg/minecraft-server
         state: started
         recreate: yes
