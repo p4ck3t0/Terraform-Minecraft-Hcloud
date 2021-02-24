@@ -100,7 +100,7 @@ location = "hel1"
 | `docker_env` | `TZ=Europe/Berlin, EULA=TRUE` | The Environment variables passed to the docker container |
 | `docker_port` | `25565:25565` | The docker container ports used to publish the server |
 
-Ansible variables can be specified in `provision/ansible-variables.yml/`. You can add additional KEY=VALUE pairs to the `docker_env` variable.
+Ansible variables can be specified in `provision/ansible-variables.yml`. You can add additional KEY=VALUE pairs to the `docker_env` variable.
 
 ## Contributing
 
