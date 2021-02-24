@@ -37,11 +37,11 @@ resource "hcloud_server" "minecraft-server" {
 
 
   provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' minecraft-server-install.yml"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' provision/minecraft-server-install.yml"
   }
 
   provisioner "local-exec" {
     when    = destroy
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' backup-minecraft-data.yml"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' provision/backup-minecraft-data.yml"
   }
 }
